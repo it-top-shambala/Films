@@ -47,7 +47,8 @@
             <StackPanel Orientation="Horizontal">
                 <Label Content="Название"
                        Style="{StaticResource StyleInfoLabel}"/>
-                <TextBox Style="{StaticResource StyleInfoInput}"/>
+                <TextBox x:Name="InputName" 
+                         Style="{StaticResource StyleInfoInput}"/>
             </StackPanel>
             <Image x:Name="Poster"/>
         </StackPanel>

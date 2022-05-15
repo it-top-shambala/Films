@@ -1,6 +1,8 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 using Films.Lib;
 
 namespace Films.App
@@ -25,7 +27,15 @@ namespace Films.App
 
         private void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            throw new System.NotImplementedException();
+            var film = (sender as ListView)?.SelectedItem as Doc;
+            InputName.Text = film?.name;
+
+            var img = new BitmapImage();
+            img.BeginInit();
+            img.UriSource = new Uri(film.poster.previewUrl);
+            img.EndInit();
+
+            Poster.Source = img;
         }
     }
 }
