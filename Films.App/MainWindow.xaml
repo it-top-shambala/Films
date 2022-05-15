@@ -6,6 +6,11 @@
         xmlns:local="clr-namespace:Films.App"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    
+    <Window.Resources>
+        <ResourceDictionary Source="./Style.xaml"/>
+    </Window.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -16,18 +21,22 @@
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         
-        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
-            <Label Content="Поиск"/>
-            <TextBox x:Name="InputSearch"/>
-            <Button Content="Найти фильм"/>
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Label Content="Поиск"
+                   Style="{StaticResource StyleSearchLabel}"/>
+            <TextBox x:Name="InputSearch"
+                     Style="{StaticResource StyleSearchInput}"/>
+            <Button Content="Найти фильм"
+                    Style="{StaticResource StyleSearchButton}"/>
         </StackPanel>
         
         <ListView Grid.Row="1" Grid.Column="0"/>
         
         <StackPanel Grid.Row="1" Grid.Column="1">
             <StackPanel Orientation="Horizontal">
-                <Label Content="Название"/>
-                <TextBox/>
+                <Label Content="Название"
+                       Style="{StaticResource StyleInfoLabel}"/>
+                <TextBox Style="{StaticResource StyleInfoInput}"/>
             </StackPanel>
             <Image x:Name="Poster"/>
         </StackPanel>
