@@ -32,14 +32,23 @@
                     Click="ButtonSearch_OnClick"/>
         </StackPanel>
         
-        <ListView Grid.Row="1" Grid.Column="0"
-                  SelectionChanged="Selector_OnSelectionChanged"/>
+        <ListView x:Name="ListFilm"
+                  Grid.Row="1" Grid.Column="0"
+                  SelectionChanged="Selector_OnSelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding name}"
+                                    Header="Название фильма"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
         
         <StackPanel Grid.Row="1" Grid.Column="1">
             <StackPanel Orientation="Horizontal">
                 <Label Content="Название"
                        Style="{StaticResource StyleInfoLabel}"/>
-                <TextBox Style="{StaticResource StyleInfoInput}"/>
+                <TextBox x:Name="InputName" 
+                         Style="{StaticResource StyleInfoInput}"/>
             </StackPanel>
             <Image x:Name="Poster"/>
         </StackPanel>
