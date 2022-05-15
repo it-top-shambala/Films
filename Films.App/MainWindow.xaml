@@ -26,11 +26,14 @@
                    Style="{StaticResource StyleSearchLabel}"/>
             <TextBox x:Name="InputSearch"
                      Style="{StaticResource StyleSearchInput}"/>
-            <Button Content="Найти фильм"
-                    Style="{StaticResource StyleSearchButton}"/>
+            <Button x:Name="ButtonSearch"
+                    Content="Найти фильм"
+                    Style="{StaticResource StyleSearchButton}"
+                    Click="ButtonSearch_OnClick"/>
         </StackPanel>
         
-        <ListView Grid.Row="1" Grid.Column="0"/>
+        <ListView Grid.Row="1" Grid.Column="0"
+                  SelectionChanged="Selector_OnSelectionChanged"/>
         
         <StackPanel Grid.Row="1" Grid.Column="1">
             <StackPanel Orientation="Horizontal">
